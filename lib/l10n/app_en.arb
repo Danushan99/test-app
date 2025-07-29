@@ -1,0 +1,7 @@
+{
+  "@@locale": "en",
+  "helloWelcome": "Hello 3000\nWelcome!",
+  "@helloWelcome": {},
+  "home": "Home",
+  "@home": {}
+}

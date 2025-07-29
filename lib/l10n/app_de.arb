@@ -1,0 +1,12 @@
+{
+  "@@locale": "de",
+  "helloWelcome": "Hallo 3000\nWillkommen!",
+  "@helloWelcome": {
+    "description": "Greeting message shown on the home screen welcoming the user"
+  },
+
+  "home": "Startseite",
+  "@home": {
+    "description": "Label for the home page"
+  }
+}
