@@ -8,5 +8,10 @@
   "home": "Startseite",
   "@home": {
     "description": "Label for the home page"
+  },
+
+  "logoin": "Anmelden",
+  "@logoin": {
+    "description": "Text for the login button or prompt"
   }
 }

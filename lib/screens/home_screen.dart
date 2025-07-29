@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:order3000_flutter/bloc/localization_bloc.dart';
+import 'package:order3000_flutter/constants/colors.dart';
 
 import 'package:order3000_flutter/generate/app_localizations.dart';
 import 'package:order3000_flutter/models/language.dart';
+import 'package:order3000_flutter/widgets/ios_style_button.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -39,13 +41,21 @@ class HomePage extends StatelessWidget {
         ],
       ),
       body: Center(
-        child: Text(
-          localizations.helloWelcome,
-          textAlign: TextAlign.center,
-          style: const TextStyle(
-            fontSize: 28,
-            fontWeight: FontWeight.bold,
-          ),
+        child: Column(
+          children: [
+            Text(
+              localizations.helloWelcome,
+              textAlign: TextAlign.center,
+              style: const TextStyle(
+                  fontSize: 28,
+                  fontWeight: FontWeight.bold,
+                  color: AppColors.grayColor),
+            ),
+            IosStyleButton(
+                backgroundColor: AppColors.blackColor,
+                child: Text(localizations.logoin),
+                onPressed: () {})
+          ],
         ),
       ),
     );

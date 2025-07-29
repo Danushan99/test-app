@@ -3,5 +3,10 @@
   "helloWelcome": "Hello \nWelcome!",
   "@helloWelcome": {},
   "home": "Home",
-  "@home": {}
+
+
+  "logoin": "Log in",
+  "@logoin": {
+    "description": ""
+  }
 }

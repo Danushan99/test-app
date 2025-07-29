@@ -9,4 +9,7 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get home => 'Startseite';
+
+  @override
+  String get logoin => 'Anmelden';
 }

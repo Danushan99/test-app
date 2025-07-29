@@ -106,6 +106,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Home'**
   String get home;
+
+  ///
+  ///
+  /// In en, this message translates to:
+  /// **'Log in'**
+  String get logoin;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

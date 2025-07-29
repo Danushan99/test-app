@@ -9,4 +9,7 @@ class AppLocalizationsTa extends AppLocalizations {
 
   @override
   String get home => 'முகப்பு';
+
+  @override
+  String get logoin => 'உள்நுழைவு';
 }
