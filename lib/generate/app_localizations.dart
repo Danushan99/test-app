@@ -98,7 +98,7 @@ abstract class AppLocalizations {
   /// No description provided for @helloWelcome.
   ///
   /// In en, this message translates to:
-  /// **'Hello 3000\nWelcome!'**
+  /// **'Hello \nWelcome!'**
   String get helloWelcome;
 
   /// No description provided for @home.

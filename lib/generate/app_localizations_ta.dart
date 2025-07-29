@@ -5,7 +5,7 @@ class AppLocalizationsTa extends AppLocalizations {
   AppLocalizationsTa([String locale = 'ta']) : super(locale);
 
   @override
-  String get helloWelcome => 'வணக்கம்\n 3000\nவரவேற்கிறோம்!';
+  String get helloWelcome => 'வணக்கம் \n வரவேற்கிறோம்!';
 
   @override
   String get home => 'முகப்பு';

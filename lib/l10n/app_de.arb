@@ -1,6 +1,6 @@
 {
   "@@locale": "de",
-  "helloWelcome": "Hallo 3000\nWillkommen!",
+  "helloWelcome": "Hallo \nWillkommen!",
   "@helloWelcome": {
     "description": "Greeting message shown on the home screen welcoming the user"
   },

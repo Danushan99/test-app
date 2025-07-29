@@ -5,7 +5,7 @@ class AppLocalizationsDe extends AppLocalizations {
   AppLocalizationsDe([String locale = 'de']) : super(locale);
 
   @override
-  String get helloWelcome => 'Hallo 3000\nWillkommen!';
+  String get helloWelcome => 'Hallo \nWillkommen!';
 
   @override
   String get home => 'Startseite';
