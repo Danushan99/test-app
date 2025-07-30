@@ -1,12 +1,21 @@
 {
   "@@locale": "en",
-  "helloWelcome": "Hello \nWelcome!",
+  "helloWelcome": "Hello !",
   "@helloWelcome": {},
   "home": "Home",
 
 
   "logoin": "Log in",
   "@logoin": {
+    "description": ""
+  },
+
+  "senttext": "Sent",
+  "@sentText": {
+    "description": ""
+  },
+    "sentnewmaill": "Sent a New Mail",
+  "@sentText": {
     "description": ""
   }
 }

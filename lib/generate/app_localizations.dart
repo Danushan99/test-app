@@ -98,7 +98,7 @@ abstract class AppLocalizations {
   /// No description provided for @helloWelcome.
   ///
   /// In en, this message translates to:
-  /// **'Hello \nWelcome!'**
+  /// **'Hello !'**
   String get helloWelcome;
 
   /// No description provided for @home.
@@ -112,6 +112,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Log in'**
   String get logoin;
+
+  /// No description provided for @senttext.
+  ///
+  /// In en, this message translates to:
+  /// **'Sent'**
+  String get senttext;
+
+  /// No description provided for @sentnewmaill.
+  ///
+  /// In en, this message translates to:
+  /// **'Sent a New Mail'**
+  String get sentnewmaill;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

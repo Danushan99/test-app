@@ -1,7 +1,7 @@
 {
   "@@locale": "ta",
   "home": "முகப்பு",
-  "helloWelcome": "வணக்கம் \n வரவேற்கிறோம்!",
+  "helloWelcome": "வணக்கம்!",
   "logoin": "உள்நுழைவு",
   "@logoin": {
     "description": "உள்நுழைவு பொத்தானுக்கான உரை"
