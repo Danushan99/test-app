@@ -44,38 +44,76 @@ class _HomePageState extends State<HomePage> {
     showModalBottomSheet(
       context: context,
       isScrollControlled: true,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+      ),
       builder: (_) {
         return Padding(
           padding: MediaQuery.of(context).viewInsets,
-          child: Padding(
-            padding: const EdgeInsets.all(16),
-            child: Wrap(
+          child: SingleChildScrollView(
+            padding: const EdgeInsets.all(20),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                Center(
+                  child: Container(
+                    width: 40,
+                    height: 4,
+                    margin: const EdgeInsets.only(bottom: 16),
+                    decoration: BoxDecoration(
+                      color: Colors.grey[300],
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                  ),
+                ),
                 const Text(
                   'Compose New Email',
-                  style: TextStyle(fontSize: 19, fontWeight: FontWeight.bold),
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+                ),
+                const SizedBox(height: 20),
+                TextField(
+                  controller: toController,
+                  decoration: InputDecoration(
+                    labelText: "Receiver's Email",
+                    border: OutlineInputBorder(),
+                    filled: true,
+                    fillColor: Colors.grey[100],
+                  ),
+                  keyboardType: TextInputType.emailAddress,
                 ),
                 const SizedBox(height: 12),
                 TextField(
-                  controller: toController,
-                  decoration:
-                      const InputDecoration(labelText: "Receiver's Email"),
-                  keyboardType: TextInputType.emailAddress,
-                ),
-                TextField(
                   controller: subjectController,
-                  decoration: const InputDecoration(labelText: 'Subject'),
+                  decoration: InputDecoration(
+                    labelText: 'Subject',
+                    border: OutlineInputBorder(),
+                    filled: true,
+                    fillColor: Colors.grey[100],
+                  ),
                 ),
+                const SizedBox(height: 12),
                 TextField(
                   controller: messageController,
-                  decoration: const InputDecoration(labelText: 'Message'),
-                  maxLines: 4,
+                  decoration: InputDecoration(
+                    labelText: 'Message',
+                    border: const OutlineInputBorder(),
+                    filled: true,
+                    fillColor: Colors.grey[100],
+                  ),
+                  maxLines: 5,
                 ),
-                const SizedBox(height: 30),
+                const SizedBox(height: 24),
                 Center(
                   child: IosStyleButton(
                     backgroundColor: AppColors.blackColor,
-                    child: const Text("Sent Email"),
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 40, vertical: 12),
+                    borderRadius: BorderRadius.circular(12),
+                    child: const Text(
+                      "Send Email",
+                      style: TextStyle(color: Colors.white),
+                    ),
                     onPressed: () {
                       final to = toController.text.trim();
                       final subject = subjectController.text.trim();
@@ -84,7 +122,8 @@ class _HomePageState extends State<HomePage> {
                       if (to.isEmpty || subject.isEmpty || message.isEmpty) {
                         ScaffoldMessenger.of(context).showSnackBar(
                           const SnackBar(
-                              content: Text('All fields are required')),
+                            content: Text('All fields are required'),
+                          ),
                         );
                         return;
                       }
@@ -101,35 +140,9 @@ class _HomePageState extends State<HomePage> {
                         emailBloc.add(LoadEmails());
                       });
                     },
-                    // ElevatedButton(
-                    //   onPressed: () {
-                    //     final to = toController.text.trim();
-                    //     final subject = subjectController.text.trim();
-                    //     final message = messageController.text.trim();
-
-                    //     if (to.isEmpty || subject.isEmpty || message.isEmpty) {
-                    //       ScaffoldMessenger.of(context).showSnackBar(
-                    //         const SnackBar(
-                    //             content: Text('All fields are required')),
-                    //       );
-                    //       return;
-                    //     }
-
-                    //     emailBloc.add(SendEmail(
-                    //       to: to,
-                    //       subject: subject,
-                    //       message: message,
-                    //     ));
-
-                    //     Navigator.of(context).pop();
-
-                    //     Future.delayed(const Duration(milliseconds: 500), () {
-                    //       emailBloc.add(LoadEmails());
-                    //     });
-                    //   },
-                    //   child: const Text('Send'),
                   ),
                 ),
+                const SizedBox(height: 12),
               ],
             ),
           ),
