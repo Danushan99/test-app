@@ -4,8 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:order3000_flutter/bloc/localization_bloc.dart';
 import 'package:order3000_flutter/bloc/stock/stock_bloc.dart';
+import 'package:order3000_flutter/bloc/trade_summary/trade_summary_bloc.dart';
+import 'package:order3000_flutter/bloc/trade_summary/trade_summary_event.dart';
 import 'package:order3000_flutter/generate/app_localizations.dart';
 import 'package:order3000_flutter/repo/stock_repository.dart';
+import 'package:order3000_flutter/repo/trade_summary_repository.dart';
 import 'package:order3000_flutter/routes/app_routes_configuration.dart';
 
 class App extends StatefulWidget {
@@ -20,7 +23,7 @@ class _AppState extends State<App> {
 
   @override
   Widget build(BuildContext context) {
-    return MultiBlocProvider(
+    return MultiRepositoryProvider(
       providers: [
         BlocProvider(
           create: (context) => LocalizationBloc()..add(GetLanguage()),
@@ -28,6 +31,11 @@ class _AppState extends State<App> {
         BlocProvider(
           create: (context) =>
               StockBloc(repository: context.read<StockRepository>()),
+        ),
+        BlocProvider(
+          create: (context) => TradeSummaryBloc(
+            repository: context.read<TradeSummaryRepository>(),
+          )..add(LoadTradeSummary()),
         ),
       ],
       child: BlocBuilder<LocalizationBloc, AppLocalizationState>(

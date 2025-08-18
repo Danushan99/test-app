@@ -41,6 +41,7 @@ final Map<String, String> companyCodeMap = {
   "Browns Beach Hotels PLC": "BBH.N0000",
   "Browns Investments PLC": "BIL.N0000",
   "Bukit Darah PLC": "BUKI.N0000",
+  // ignore: equal_keys_in_map
   "Brown & Company PLC": "BRWN.N0000",
   "C T Holdings PLC": "CTHR.N0000",
   "Cargills (Ceylon) PLC": "CARG.N0000",

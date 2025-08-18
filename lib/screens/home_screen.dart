@@ -3,10 +3,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:order3000_flutter/models/language.dart';
+import 'package:order3000_flutter/repo/trade_summary_repository.dart';
 import 'package:order3000_flutter/widgets/search_bar.dart';
 import 'package:order3000_flutter/widgets/stocks/icon_detail_row.dart';
-import 'package:order3000_flutter/widgets/stocks/stock_empty_widget.dart';
 import 'package:order3000_flutter/widgets/stocks/stock_error_widget.dart';
+import 'package:order3000_flutter/widgets/trade/trade_summary_chart.dart';
+import 'package:order3000_flutter/widgets/trade/trade_summary_widget.dart';
 import '../bloc/stock/stock_bloc.dart';
 import '../bloc/stock/stock_event.dart';
 import '../bloc/stock/stock_state.dart';
@@ -420,7 +422,11 @@ class _HomePageState extends State<HomePage> {
                       } else if (state is StockError) {
                         return StockErrorWidget(message: state.message);
                       }
-                      return const StockEmptyWidget();
+                      return TradeSummaryWidget(
+                          repository: TradeSummaryRepository());
+                      // Column(
+                      //   children: [Text("data")],
+                      // );
                     },
                   ),
                 ),
